@@ -1,0 +1,1486 @@
+/* Modern shadcn/ui-inspired Design System */
+:root {
+  --background: 0 0% 100%;
+  --foreground: 222.2 84% 4.9%;
+  --card: 0 0% 100%;
+  --card-foreground: 222.2 84% 4.9%;
+  --popover: 0 0% 100%;
+  --popover-foreground: 222.2 84% 4.9%;
+  --primary: 221.2 83.2% 53.3%;
+  --primary-foreground: 210 40% 98%;
+  --secondary: 210 40% 96%;
+  --secondary-foreground: 222.2 84% 4.9%;
+  --muted: 210 40% 96%;
+  --muted-foreground: 215.4 16.3% 46.9%;
+  --accent: 210 40% 96%;
+  --accent-foreground: 222.2 84% 4.9%;
+  --destructive: 0 84.2% 60.2%;
+  --destructive-foreground: 210 40% 98%;
+  --border: 214.3 31.8% 91.4%;
+  --input: 214.3 31.8% 91.4%;
+  --ring: 221.2 83.2% 53.3%;
+  --radius: 0.5rem;
+  --success: 142.1 76.2% 36.3%;
+  --success-foreground: 355.7 100% 97.3%;
+}
+
+/* Dark theme */
+[data-theme="dark"] {
+  --background: 222.2 84% 4.9%;
+  --foreground: 210 40% 98%;
+  --card: 222.2 84% 4.9%;
+  --card-foreground: 210 40% 98%;
+  --popover: 222.2 84% 4.9%;
+  --popover-foreground: 210 40% 98%;
+  --primary: 217.2 91.2% 59.8%;
+  --primary-foreground: 222.2 84% 4.9%;
+  --secondary: 217.2 32.6% 17.5%;
+  --secondary-foreground: 210 40% 98%;
+  --muted: 217.2 32.6% 17.5%;
+  --muted-foreground: 215 20.2% 65.1%;
+  --accent: 217.2 32.6% 17.5%;
+  --accent-foreground: 210 40% 98%;
+  --destructive: 0 62.8% 30.6%;
+  --destructive-foreground: 210 40% 98%;
+  --border: 217.2 32.6% 17.5%;
+  --input: 217.2 32.6% 17.5%;
+  --ring: 224.3 76.3% 94.1%;
+}
+
+/* Theme toggle button */
+.modern-theme-toggle {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  border-radius: var(--radius);
+  font-size: 0.875rem;
+  font-weight: 500;
+  transition: all 0.2s ease-in-out;
+  cursor: pointer;
+  border: 1px solid hsl(var(--border));
+  background: hsl(var(--background));
+  color: hsl(var(--foreground));
+  height: 2.5rem;
+  padding: 0 0.75rem;
+  position: relative;
+  overflow: hidden;
+}
+
+.modern-theme-toggle:hover {
+  background: hsl(var(--accent));
+  color: hsl(var(--accent-foreground));
+}
+
+.modern-theme-toggle svg {
+  width: 1rem;
+  height: 1rem;
+  transition: transform 0.2s ease-in-out;
+}
+
+[data-theme="dark"] .modern-theme-toggle svg {
+  transform: rotate(180deg);
+}
+
+/* Task Management Components */
+.modern-task-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(140px, 1fr));
+  gap: 1rem;
+  margin-top: 1.5rem;
+  padding: 0.5rem;
+}
+
+.modern-task-item {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 1rem;
+  background: hsl(var(--card));
+  border: 1px solid hsl(var(--border));
+  border-radius: var(--radius);
+  transition: all 0.2s ease-in-out;
+  position: relative;
+  overflow: hidden;
+  min-height: 3.5rem;
+}
+
+.modern-task-item::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  height: 3px;
+  background: linear-gradient(90deg, hsl(var(--primary)), hsl(var(--primary) / 0.7));
+  opacity: 0;
+  transition: opacity 0.2s ease-in-out;
+}
+
+.modern-task-item:hover {
+  border-color: hsl(var(--primary));
+  box-shadow: 0 2px 8px hsl(var(--primary) / 0.1);
+  transform: translateY(-1px);
+}
+
+.modern-task-item:hover::before {
+  opacity: 1;
+}
+
+.modern-task-label {
+  font-weight: 600;
+  font-size: 0.875rem;
+  color: hsl(var(--foreground));
+  letter-spacing: 0.025em;
+}
+
+.modern-task-remove {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 1.5rem;
+  height: 1.5rem;
+  border-radius: 50%;
+  background: hsl(var(--destructive) / 0.1);
+  color: hsl(var(--destructive));
+  border: none;
+  cursor: pointer;
+  transition: all 0.2s ease-in-out;
+  opacity: 0.7;
+}
+
+.modern-task-remove:hover {
+  background: hsl(var(--destructive));
+  color: hsl(var(--destructive-foreground));
+  opacity: 1;
+  transform: scale(1.1);
+}
+
+.modern-task-remove svg {
+  width: 0.875rem;
+  height: 0.875rem;
+}
+
+/* Base styles */
+* {
+  box-sizing: border-box;
+}
+
+body {
+  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen', 'Ubuntu', 'Cantarell', sans-serif;
+  line-height: 1.6;
+  color: hsl(var(--foreground));
+  background: hsl(var(--background));
+}
+
+/* Modern Layout Components */
+.modern-root {
+  min-height: 100vh;
+  margin-top: 10px;
+  background: linear-gradient(135deg, hsl(var(--primary) / 0.05) 0%, hsl(var(--secondary) / 0.1) 100%);
+  padding: 1rem;
+}
+
+.modern-container {
+  max-width: 1400px;
+  margin: 0 auto;
+}
+
+/* Reduce padding on larger screens */
+@media (min-width: 1200px) {
+  .modern-root {
+    padding: 0.75rem;
+  }
+}
+
+@media (min-width: 1400px) {
+  .modern-root {
+    padding: 0.5rem;
+  }
+
+  .modern-container {
+    max-width: 1600px;
+  }
+}
+
+@media (min-width: 1600px) {
+  .modern-root {
+    padding: 0.25rem;
+  }
+
+  .modern-container {
+    max-width: 1800px;
+  }
+}
+
+/* Header Components */
+.modern-header {
+  background: hsl(var(--card));
+  border: 1px solid hsl(var(--border));
+  border-radius: var(--radius);
+  padding: 2rem;
+  margin-bottom: 1.5rem;
+  box-shadow: 0 1px 3px 0 hsl(var(--foreground) / 0.1), 0 1px 2px -1px hsl(var(--foreground) / 0.1);
+}
+
+.modern-title {
+  font-size: 2rem;
+  font-weight: 700;
+  color: hsl(var(--foreground));
+  margin: 0 0 0.5rem 0;
+  letter-spacing: -0.025em;
+}
+
+.modern-subtitle {
+  color: hsl(var(--muted-foreground));
+  font-size: 1rem;
+  margin: 0;
+  font-weight: 400;
+}
+
+/* Card Components */
+.modern-card {
+  background: hsl(var(--card));
+  border: 1px solid hsl(var(--border));
+  border-radius: var(--radius);
+  padding: 1.5rem;
+  margin-bottom: 1.5rem;
+  box-shadow: 0 1px 3px 0 hsl(var(--foreground) / 0.1), 0 1px 2px -1px hsl(var(--foreground) / 0.1);
+  transition: box-shadow 0.2s ease-in-out;
+}
+
+.modern-card:hover {
+  box-shadow: 0 4px 6px -1px hsl(var(--foreground) / 0.1), 0 2px 4px -2px hsl(var(--foreground) / 0.1);
+}
+
+.modern-card-header {
+  padding-bottom: 1rem;
+  margin-bottom: 1rem;
+  border-bottom: 1px solid hsl(var(--border));
+}
+
+.modern-card-title {
+  font-size: 1.25rem;
+  font-weight: 600;
+  color: hsl(var(--foreground));
+  margin: 0;
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+}
+
+.modern-card-content {
+  color: hsl(var(--muted-foreground));
+}
+
+/* Form Components */
+.modern-form {
+  display: grid;
+  gap: 1rem;
+}
+
+.modern-form-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+  gap: 1rem;
+  align-items: end;
+}
+
+.modern-input {
+  display: flex;
+  height: 2.5rem;
+  width: 100%;
+  border-radius: var(--radius);
+  border: 1px solid hsl(var(--input));
+  background: hsl(var(--background));
+  color: hsl(var(--foreground));
+  padding: 0 0.75rem;
+  font-size: 0.875rem;
+  font-weight: 400;
+  transition: border-color 0.2s ease-in-out, box-shadow 0.2s ease-in-out;
+}
+
+.modern-input:focus {
+  outline: none;
+  border-color: hsl(var(--ring));
+  box-shadow: 0 0 0 2px hsl(var(--ring) / 0.2);
+}
+
+.modern-input::placeholder {
+  color: hsl(var(--muted-foreground));
+}
+
+/* Number input styling */
+/* .modern-input[type="number"] {
+  -moz-appearance: textfield;
+} */
+
+.modern-input[type="number"]::-webkit-outer-spin-button,
+.modern-input[type="number"]::-webkit-inner-spin-button {
+  -webkit-appearance: none;
+  margin: 0;
+}
+
+.modern-select {
+  display: flex;
+  height: 2.5rem;
+  width: 100%;
+  border-radius: var(--radius);
+  border: 1px solid hsl(var(--input));
+  background: hsl(var(--background));
+  color: hsl(var(--foreground));
+  padding: 0 0.75rem;
+  font-size: 0.875rem;
+  font-weight: 400;
+  cursor: pointer;
+  transition: border-color 0.2s ease-in-out, box-shadow 0.2s ease-in-out;
+}
+
+.modern-select:focus {
+  outline: none;
+  border-color: hsl(var(--ring));
+  box-shadow: 0 0 0 2px hsl(var(--ring) / 0.2);
+}
+
+/* Button Components */
+.modern-btn {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  border-radius: var(--radius);
+  font-size: 0.875rem;
+  font-weight: 500;
+  transition: all 0.2s ease-in-out;
+  cursor: pointer;
+  border: none;
+  height: 2.5rem;
+  padding: 0 1rem;
+  position: relative;
+  overflow: hidden;
+}
+
+.modern-btn:disabled {
+  opacity: 0.5;
+  cursor: not-allowed;
+}
+
+.modern-btn-primary {
+  background: hsl(var(--primary));
+  color: hsl(var(--primary-foreground));
+}
+
+.modern-btn-primary:hover:not(:disabled) {
+  background: hsl(var(--primary) / 0.9);
+}
+
+.modern-btn-secondary {
+  background: hsl(var(--secondary));
+  color: hsl(var(--secondary-foreground));
+}
+
+.modern-btn-secondary:hover:not(:disabled) {
+  background: hsl(var(--secondary) / 0.8);
+}
+
+.modern-btn-destructive {
+  background: hsl(var(--destructive));
+  color: hsl(var(--destructive-foreground));
+}
+
+.modern-btn-destructive:hover:not(:disabled) {
+  background: hsl(var(--destructive) / 0.9);
+}
+
+.modern-btn-success {
+  background: hsl(var(--success));
+  color: hsl(var(--success-foreground));
+}
+
+.modern-btn-success:hover:not(:disabled) {
+  background: hsl(var(--success) / 0.9);
+}
+
+.modern-btn-outline {
+  background: transparent;
+  color: hsl(var(--foreground));
+  border: 1px solid hsl(var(--border));
+}
+
+.modern-btn-outline:hover:not(:disabled) {
+  background: hsl(var(--accent));
+  color: hsl(var(--accent-foreground));
+}
+
+.modern-btn-sm {
+  height: 2rem;
+  padding: 0 0.75rem;
+  font-size: 0.75rem;
+}
+
+.modern-btn-lg {
+  height: 3rem;
+  padding: 0 1.5rem;
+  font-size: 1rem;
+}
+
+/* Table Components */
+.modern-table-container {
+  width: 100%;
+  overflow-x: auto;
+  border-radius: var(--radius);
+  background: hsl(var(--card));
+  box-shadow: 0 1px 3px 0 hsl(var(--foreground) / 0.1), 0 1px 2px -1px hsl(var(--foreground) / 0.1);
+  -webkit-overflow-scrolling: touch;
+  scrollbar-width: thin;
+  scrollbar-color: hsl(var(--muted)) hsl(var(--background));
+  border: 1px solid hsl(var(--border));
+  position: relative;
+}
+
+.modern-table-container::-webkit-scrollbar {
+  height: 6px;
+}
+
+.modern-table-container::-webkit-scrollbar-track {
+  background: hsl(var(--background));
+  border-radius: 3px;
+}
+
+.modern-table-container::-webkit-scrollbar-thumb {
+  background: hsl(var(--muted));
+  border-radius: 3px;
+}
+
+.modern-table-container::-webkit-scrollbar-thumb:hover {
+  background: hsl(var(--muted-foreground));
+}
+
+.modern-table {
+  width: 100%;
+  border-collapse: collapse;
+  font-size: 0.875rem;
+  min-width: max-content;
+  /* Allow table to size based on content */
+  table-layout: auto;
+  /* Allow columns to size based on content */
+}
+
+.modern-table th {
+  background: hsl(var(--muted));
+  padding: 0.75rem 1rem;
+  text-align: left;
+  font-weight: 600;
+  color: hsl(var(--foreground));
+  border-bottom: 1px solid hsl(var(--border));
+  position: sticky;
+  top: 0;
+  z-index: 10;
+  white-space: nowrap;
+  overflow: visible;
+  text-overflow: clip;
+}
+
+.modern-table td {
+  padding: 0.75rem 1rem;
+  border-bottom: 1px solid hsl(var(--border));
+  vertical-align: middle;
+  white-space: nowrap;
+  overflow: visible;
+  text-overflow: clip;
+}
+
+.modern-table tbody tr:hover {
+  background: hsl(var(--muted) / 0.5);
+  box-shadow: 0 1px 3px 0 hsl(var(--foreground) / 0.1);
+}
+
+.modern-table tbody tr:last-child td {
+  border-bottom: none;
+}
+
+/* Enhanced table styling for better visual separation */
+.modern-table {
+  border-spacing: 0;
+  border-collapse: separate;
+  width: 100%;
+}
+
+/* Removed duplicate table container definition */
+
+/* Add subtle background alternation for better readability */
+.modern-table tbody tr:nth-child(even) {
+  background: hsl(var(--muted) / 0.3);
+}
+
+.modern-table tbody tr:nth-child(even):hover {
+  background: hsl(var(--muted) / 0.6);
+}
+
+/* Better cell content spacing */
+.modern-table td .modern-input,
+.modern-table td .modern-select {
+  margin: 0;
+  border: 1px solid hsl(var(--input));
+  background: hsl(var(--background));
+}
+
+.modern-table td .modern-input:focus,
+.modern-table td .modern-select:focus {
+  border-color: hsl(var(--ring));
+  box-shadow: 0 0 0 2px hsl(var(--ring) / 0.2);
+}
+
+/* Improved table header styling */
+.modern-table thead {
+  background: hsl(var(--muted));
+  border-bottom: 2px solid hsl(var(--border));
+}
+
+.modern-table thead th {
+  font-weight: 600;
+  text-transform: uppercase;
+  font-size: 0.75rem;
+  letter-spacing: 0.05em;
+  color: hsl(var(--muted-foreground));
+}
+
+/* Badge Components */
+.modern-badge {
+  display: inline-flex;
+  align-items: center;
+  border-radius: 9999px;
+  border: 1px solid hsl(var(--border));
+  background: hsl(var(--secondary));
+  color: hsl(var(--secondary-foreground));
+  padding: 0.25rem 0.75rem;
+  font-size: 0.75rem;
+  font-weight: 500;
+  line-height: 1;
+  white-space: nowrap;
+}
+
+.modern-badge-primary {
+  background: hsl(var(--primary));
+  color: hsl(var(--primary-foreground));
+  border-color: hsl(var(--primary));
+}
+
+.modern-badge-success {
+  background: hsl(var(--success));
+  color: hsl(var(--success-foreground));
+  border-color: hsl(var(--success));
+}
+
+.modern-badge-secondary {
+  background: hsl(var(--secondary));
+  color: hsl(var(--secondary-foreground));
+  border-color: hsl(var(--border));
+}
+
+/* Alert Components */
+.modern-alert {
+  position: fixed;
+  top: 1rem;
+  right: 1rem;
+  z-index: 1000;
+  padding: 0.75rem 1rem;
+  border-radius: var(--radius);
+  font-size: 0.875rem;
+  font-weight: 500;
+  box-shadow: 0 4px 6px -1px hsl(var(--foreground) / 0.1), 0 2px 4px -2px hsl(var(--foreground) / 0.1);
+  animation: slideIn 0.3s ease-out;
+}
+
+.modern-alert-success {
+  background: hsl(var(--success));
+  color: hsl(var(--success-foreground));
+  border: 1px solid hsl(var(--success) / 0.2);
+}
+
+.modern-alert-error {
+  background: hsl(var(--destructive));
+  color: hsl(var(--destructive-foreground));
+  border: 1px solid hsl(var(--destructive) / 0.2);
+}
+
+/* Loading Component */
+.modern-loading {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: 2rem;
+  color: hsl(var(--muted-foreground));
+  font-size: 0.875rem;
+}
+
+.modern-loading::before {
+  content: '';
+  width: 1rem;
+  height: 1rem;
+  border: 2px solid hsl(var(--border));
+  border-top: 2px solid hsl(var(--primary));
+  border-radius: 50%;
+  animation: spin 1s linear infinite;
+  margin-right: 0.5rem;
+}
+
+/* Utility Classes */
+.modern-text-muted {
+  color: hsl(var(--muted-foreground));
+}
+
+.modern-text-center {
+  text-align: center;
+}
+
+.modern-flex {
+  display: flex;
+}
+
+.modern-flex-col {
+  flex-direction: column;
+}
+
+.modern-items-center {
+  align-items: center;
+}
+
+.modern-justify-center {
+  justify-content: center;
+}
+
+.modern-gap-2 {
+  gap: 0.5rem;
+}
+
+.modern-gap-4 {
+  gap: 1rem;
+}
+
+.modern-space-y-4>*+* {
+  margin-top: 1rem;
+}
+
+/* Animations */
+@keyframes spin {
+  0% {
+    transform: rotate(0deg);
+  }
+
+  100% {
+    transform: rotate(360deg);
+  }
+}
+
+@keyframes slideIn {
+  from {
+    transform: translateX(100%);
+    opacity: 0;
+  }
+
+  to {
+    transform: translateX(0);
+    opacity: 1;
+  }
+}
+
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+  }
+
+  to {
+    opacity: 1;
+  }
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+  .modern-root {
+    padding: 0.75rem;
+  }
+
+  .modern-container {
+    max-width: 100%;
+  }
+
+  .modern-task-grid {
+    grid-template-columns: repeat(auto-fill, minmax(120px, 1fr));
+    gap: 0.75rem;
+    padding: 0.25rem;
+  }
+
+  .modern-task-item {
+    padding: 0.75rem;
+    min-height: 3rem;
+  }
+
+  .modern-task-label {
+    font-size: 0.8rem;
+  }
+
+  .modern-header,
+  .modern-card {
+    padding: 1rem;
+    margin-bottom: 1rem;
+  }
+
+  .modern-title {
+    font-size: 1.5rem;
+  }
+
+  .modern-subtitle {
+    font-size: 0.9rem;
+  }
+
+  .modern-form-grid {
+    grid-template-columns: 1fr;
+    gap: 0.75rem;
+  }
+
+  .modern-table {
+    font-size: 0.75rem;
+    min-width: max-content;
+    /* Allow table to size based on content */
+  }
+
+  .modern-table th,
+  .modern-table td {
+    padding: 0.5rem 0.75rem;
+  }
+
+  /* Mobile table optimizations */
+  .modern-table-container {
+    margin: 0 -0.5rem;
+    border-radius: 0;
+    border-left: none;
+    border-right: none;
+    overflow-x: auto;
+    /* Ensure horizontal scrolling works */
+  }
+
+  .modern-table th,
+  .modern-table td {
+    min-width: 80px;
+  }
+
+  /* Specific column widths for mobile */
+  .modern-table th:first-child,
+  .modern-table td:first-child {
+    min-width: 100px;
+  }
+
+  .modern-table th:nth-child(2),
+  .modern-table td:nth-child(2) {
+    min-width: 120px;
+  }
+
+  /* Admin table specific column widths */
+  .modern-table th:nth-child(3),
+  .modern-table td:nth-child(3) {
+    min-width: 100px;
+  }
+
+  .modern-table th:nth-child(4),
+  .modern-table td:nth-child(4) {
+    min-width: 80px;
+  }
+
+  .modern-btn {
+    height: 2.25rem;
+    padding: 0 0.75rem;
+    font-size: 0.75rem;
+  }
+
+  /* Member page specific mobile improvements */
+  .modern-card-header {
+    padding-bottom: 0.75rem;
+    margin-bottom: 0.75rem;
+  }
+
+  .modern-card-title {
+    font-size: 1.1rem;
+  }
+}
+
+@media (max-width: 480px) {
+  .modern-root {
+    padding: 0.5rem;
+  }
+
+  .modern-container {
+    max-width: 100%;
+  }
+
+  .modern-task-grid {
+    grid-template-columns: repeat(auto-fill, minmax(100px, 1fr));
+    gap: 0.5rem;
+    padding: 0.125rem;
+  }
+
+  .modern-task-item {
+    padding: 0.5rem;
+    min-height: 2.5rem;
+  }
+
+  .modern-task-label {
+    font-size: 0.75rem;
+  }
+
+  .modern-task-remove {
+    width: 1.25rem;
+    height: 1.25rem;
+  }
+
+  .modern-task-remove svg {
+    width: 0.75rem;
+    height: 0.75rem;
+  }
+
+  .modern-header,
+  .modern-card {
+    padding: 0.75rem;
+    margin-bottom: 0.75rem;
+  }
+
+  .modern-title {
+    font-size: 1.25rem;
+  }
+
+  .modern-subtitle {
+    font-size: 0.85rem;
+  }
+
+  .modern-table {
+    font-size: 0.6875rem;
+    min-width: max-content;
+    /* Allow table to size based on content */
+  }
+
+  .modern-table th,
+  .modern-table td {
+    padding: 0.375rem 0.5rem;
+  }
+
+  /* Extra small mobile optimizations */
+  .modern-table-container {
+    margin: 0 -0.75rem;
+    overflow-x: auto;
+    /* Ensure horizontal scrolling works */
+  }
+
+  .modern-table th,
+  .modern-table td {
+    min-width: 60px;
+  }
+
+  .modern-table th:first-child,
+  .modern-table td:first-child {
+    min-width: 80px;
+  }
+
+  .modern-table th:nth-child(2),
+  .modern-table td:nth-child(2) {
+    min-width: 100px;
+  }
+
+  /* Admin table specific column widths for small mobile */
+  .modern-table th:nth-child(3),
+  .modern-table td:nth-child(3) {
+    min-width: 80px;
+  }
+
+  .modern-table th:nth-child(4),
+  .modern-table td:nth-child(4) {
+    min-width: 70px;
+  }
+
+  /* Hide less important columns on very small screens */
+  .modern-table th:nth-child(n+5),
+  .modern-table td:nth-child(n+5) {
+    min-width: 50px;
+  }
+
+  .modern-btn {
+    height: 2rem;
+    padding: 0 0.5rem;
+    font-size: 0.6875rem;
+  }
+
+  /* Member page specific mobile improvements */
+  .modern-card-header {
+    padding-bottom: 0.5rem;
+    margin-bottom: 0.5rem;
+  }
+
+  .modern-card-title {
+    font-size: 1rem;
+  }
+
+  .modern-input {
+    height: 2.25rem;
+    font-size: 0.875rem;
+  }
+
+  .modern-space-y-4>*+* {
+    margin-top: 0.75rem;
+  }
+}
+
+/* Focus styles for accessibility */
+.modern-btn:focus-visible,
+.modern-input:focus-visible,
+.modern-select:focus-visible {
+  outline: 2px solid hsl(var(--ring));
+  outline-offset: 2px;
+}
+
+/* Mobile table scroll indicator */
+.modern-table-container::after {
+  content: '';
+  position: absolute;
+  top: 0;
+  right: 0;
+  bottom: 0;
+  width: 20px;
+  background: linear-gradient(90deg, transparent, hsl(var(--background) / 0.8));
+  pointer-events: none;
+  opacity: 0;
+  transition: opacity 0.3s ease-in-out;
+}
+
+.modern-table-container.scrollable::after {
+  opacity: 1;
+}
+
+/* Touch-friendly table interactions */
+@media (hover: none) and (pointer: coarse) {
+  .modern-table tbody tr {
+    min-height: 44px;
+  }
+
+  .modern-table td {
+    padding: 0.875rem 0.5rem;
+  }
+
+  .modern-table th {
+    padding: 0.875rem 0.5rem;
+  }
+
+  .modern-input {
+    min-height: 44px;
+  }
+
+  .modern-btn {
+    min-height: 44px;
+  }
+}
+
+/* Admin table specific responsive styles */
+.modern-table.admin-table th:nth-child(1),
+.modern-table.admin-table td:nth-child(1) {
+  min-width: 120px;
+  /* Name column */
+  max-width: 150px;
+  padding-left: 1.5rem;
+}
+
+.modern-table.admin-table th:nth-child(2),
+.modern-table.admin-table td:nth-child(2) {
+  min-width: 140px;
+  /* Email column */
+  max-width: 180px;
+}
+
+.modern-table.admin-table th:nth-child(3),
+.modern-table.admin-table td:nth-child(3) {
+  min-width: 100px;
+  /* Group column */
+  max-width: 120px;
+}
+
+.modern-table.admin-table th:nth-child(4),
+.modern-table.admin-table td:nth-child(4) {
+  min-width: 90px;
+  /* Role column */
+  max-width: 100px;
+}
+
+.modern-table.admin-table th:nth-child(n+5),
+.modern-table.admin-table td:nth-child(n+5) {
+  min-width: 70px;
+  /* Task columns */
+  max-width: 80px;
+}
+
+.modern-table.admin-table th:last-child,
+.modern-table.admin-table td:last-child {
+  padding-right: 1.5rem;
+}
+
+/* Ensure inputs don't overflow their containers */
+.modern-table.admin-table .modern-input,
+.modern-table.admin-table .modern-select {
+  max-width: 100%;
+  box-sizing: border-box;
+  width: 100%;
+}
+
+/* Input styling for better content display */
+.modern-table.admin-table .modern-input,
+.modern-table.admin-table .modern-select {
+  min-width: 80px;
+  font-size: 0.875rem;
+  white-space: normal;
+  overflow: visible;
+  text-overflow: clip;
+}
+
+/* Mark task input specific styling */
+.modern-table.admin-table td:nth-child(n+5):not(:last-child) {
+  text-align: center;
+}
+
+.modern-table.admin-table td:nth-child(n+5):not(:last-child) .modern-input {
+  width: 70px;
+  text-align: center;
+  margin: 0 auto;
+  display: inline-block;
+}
+
+@media (max-width: 480px) {
+
+  .modern-table.admin-table .modern-input,
+  .modern-table.admin-table .modern-select {
+    font-size: 0.75rem;
+    min-width: 60px;
+  }
+
+  .modern-table.admin-table td:nth-child(n+5):not(:last-child) {
+    text-align: center;
+  }
+
+  .modern-table.admin-table td:nth-child(n+5):not(:last-child) .modern-input {
+    width: 60px;
+    text-align: center;
+    margin: 0 auto;
+    display: inline-block;
+  }
+}
+
+/* Ensure text content is visible */
+.modern-table.admin-table td {
+  white-space: nowrap;
+  overflow: visible;
+  text-overflow: clip;
+}
+
+/* Ensure consistent column alignment for admin table */
+.modern-table.admin-table {
+  table-layout: fixed;
+  /* Use fixed layout for consistent column widths */
+}
+
+.modern-table.admin-table th,
+.modern-table.admin-table td {
+  box-sizing: border-box;
+}
+
+/* Specific column widths for admin table */
+.modern-table.admin-table th:nth-child(1),
+.modern-table.admin-table td:nth-child(1) {
+  width: 150px;
+  /* Name column */
+}
+
+.modern-table.admin-table th:nth-child(2),
+.modern-table.admin-table td:nth-child(2) {
+  width: 180px;
+  /* Email column */
+}
+
+.modern-table.admin-table th:nth-child(3),
+.modern-table.admin-table td:nth-child(3) {
+  width: 120px;
+  /* Group column */
+}
+
+.modern-table.admin-table th:nth-child(4),
+.modern-table.admin-table td:nth-child(4) {
+  width: 100px;
+  /* Role column */
+}
+
+/* Mark task columns - all same width */
+.modern-table.admin-table th:nth-child(n+5):not(:last-child),
+.modern-table.admin-table td:nth-child(n+5):not(:last-child) {
+  width: 80px;
+  text-align: center;
+}
+
+.modern-table.admin-table th:last-child,
+.modern-table.admin-table td:last-child {
+  width: 120px;
+  /* Actions column */
+}
+
+
+/* Leader page table specific styling */
+.modern-table:not(.admin-table) th:nth-child(n+3):not(:last-child),
+.modern-table:not(.admin-table) td:nth-child(n+3):not(:last-child) {
+  text-align: center;
+}
+
+.modern-table:not(.admin-table) td:nth-child(n+3):not(:last-child) .modern-input {
+  width: 70px;
+  text-align: center;
+  margin: 0 auto;
+  display: inline-block;
+}
+
+/* Leader page table with only task columns (no name/email) */
+.modern-table th:nth-child(n+1):not(:last-child),
+.modern-table td:nth-child(n+1):not(:last-child) {
+  text-align: center;
+}
+
+/* Mobile admin table adjustments */
+@media (max-width: 768px) {
+  .modern-table.admin-table {
+    table-layout: auto;
+    /* Allow flexible sizing on mobile */
+  }
+
+  .modern-table.admin-table th:nth-child(1),
+  .modern-table.admin-table td:nth-child(1) {
+    min-width: 180px;
+    padding-left: 1rem;
+  }
+
+  .modern-table.admin-table th:nth-child(2),
+  .modern-table.admin-table td:nth-child(2) {
+    min-width: 160px;
+  }
+
+  .modern-table.admin-table th:nth-child(3),
+  .modern-table.admin-table td:nth-child(3) {
+    min-width: 120px;
+  }
+
+  .modern-table.admin-table th:nth-child(4),
+  .modern-table.admin-table td:nth-child(4) {
+    min-width: 100px;
+  }
+
+  .modern-table.admin-table th:nth-child(n+5):not(:last-child),
+  .modern-table.admin-table td:nth-child(n+5):not(:last-child) {
+    min-width: 80px;
+    text-align: center;
+  }
+
+  .modern-table.admin-table td:nth-child(n+5):not(:last-child) .modern-input {
+    width: 70px;
+    text-align: center;
+    margin: 0 auto;
+    display: inline-block;
+  }
+
+  .modern-table.admin-table th:last-child,
+  .modern-table.admin-table td:last-child {
+    padding-right: 1rem;
+  }
+}
+
+@media (max-width: 480px) {
+
+  .modern-table.admin-table th:nth-child(1),
+  .modern-table.admin-table td:nth-child(1) {
+    min-width: 140px;
+    padding-left: 0.75rem;
+  }
+
+  .modern-table.admin-table th:nth-child(2),
+  .modern-table.admin-table td:nth-child(2) {
+    min-width: 130px;
+  }
+
+  .modern-table.admin-table th:nth-child(3),
+  .modern-table.admin-table td:nth-child(3) {
+    min-width: 100px;
+  }
+
+  .modern-table.admin-table th:nth-child(4),
+  .modern-table.admin-table td:nth-child(4) {
+    min-width: 90px;
+  }
+
+  .modern-table.admin-table th:nth-child(n+5):not(:last-child),
+  .modern-table.admin-table td:nth-child(n+5):not(:last-child) {
+    min-width: 70px;
+    text-align: center;
+  }
+
+  .modern-table.admin-table td:nth-child(n+5):not(:last-child) .modern-input {
+    width: 60px;
+    text-align: center;
+    margin: 0 auto;
+    display: inline-block;
+  }
+
+  .modern-table.admin-table th:last-child,
+  .modern-table.admin-table td:last-child {
+    padding-right: 0.75rem;
+  }
+}
+
+/* Extra small mobile devices */
+@media (max-width: 360px) {
+
+  .modern-table.admin-table th:nth-child(1),
+  .modern-table.admin-table td:nth-child(1) {
+    min-width: 120px;
+    padding-left: 0.5rem;
+  }
+
+  .modern-table.admin-table th:nth-child(2),
+  .modern-table.admin-table td:nth-child(2) {
+    min-width: 110px;
+  }
+
+  .modern-table.admin-table th:nth-child(3),
+  .modern-table.admin-table td:nth-child(3) {
+    min-width: 90px;
+  }
+
+  .modern-table.admin-table th:nth-child(4),
+  .modern-table.admin-table td:nth-child(4) {
+    min-width: 80px;
+  }
+
+  .modern-table.admin-table th:nth-child(n+5):not(:last-child),
+  .modern-table.admin-table td:nth-child(n+5):not(:last-child) {
+    min-width: 60px;
+    text-align: center;
+  }
+
+  .modern-table.admin-table td:nth-child(n+5):not(:last-child) .modern-input {
+    width: 50px;
+    text-align: center;
+    margin: 0 auto;
+    display: inline-block;
+  }
+
+  .modern-table.admin-table th:last-child,
+  .modern-table.admin-table td:last-child {
+    padding-right: 0.5rem;
+  }
+}
+
+/* Mark Cards Layout */
+.modern-marks-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+  gap: 1.5rem;
+  margin-top: 1rem;
+}
+
+.modern-mark-card {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-direction: column;
+  background: hsl(var(--card));
+  border: 1px solid hsl(var(--border));
+  border-radius: var(--radius);
+  padding: 1rem;
+  transition: all 0.2s ease-in-out;
+  position: relative;
+  overflow: hidden;
+}
+
+.modern-mark-card::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  height: 4px;
+  background: linear-gradient(90deg, hsl(var(--primary)), hsl(var(--primary) / 0.7));
+  opacity: 0;
+  transition: opacity 0.2s ease-in-out;
+}
+
+.modern-mark-card:hover {
+  border-color: hsl(var(--primary));
+  box-shadow: 0 4px 12px hsl(var(--primary) / 0.1);
+  transform: translateY(-2px);
+}
+
+.modern-mark-card:hover::before {
+  opacity: 1;
+}
+
+.modern-mark-header {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: space-between;
+  gap: 0.5rem;
+  width: 100%;
+  margin-bottom: 0;
+}
+
+.modern-mark-title {
+  font-size: 1.125rem;
+  font-weight: 600;
+  color: hsl(var(--primary));
+  margin: 0;
+  letter-spacing: 0.025em;
+  background: hsl(var(--primary) / 0.08);
+  border-radius: 0.5rem;
+  padding: 0.25em 0.75em;
+  display: inline-block;
+}
+
+.modern-mark-value {
+  font-size: 1.5rem;
+  font-weight: 700;
+  color: hsl(var(--primary));
+  /* background: hsl(var(--primary)); */
+  border-radius: 0.5rem;
+  /* padding: 0.25em 0.75em; */
+  /* margin-right: 0.25em; */
+  box-shadow: 0 2px 8px hsl(var(--primary) / 0.10);
+}
+
+.modern-mark-max {
+  font-size: 0.875rem;
+  color: hsl(var(--muted-foreground));
+  font-weight: 500;
+  margin-left: 0.25em;
+}
+
+
+/* Responsive mark cards */
+@media (max-width: 768px) {
+  .modern-marks-grid {
+    grid-template-columns: repeat(3, 1fr);
+    gap: 1rem;
+    margin-top: 0.75rem;
+  }
+
+  .modern-mark-card {
+    padding: 0.875rem;
+  }
+
+  .modern-mark-title {
+    font-size: 1rem;
+  }
+
+  .modern-mark-value {
+    font-size: 1.25rem;
+  }
+}
+
+@media (max-width: 480px) {
+  .modern-marks-grid {
+    grid-template-columns: repeat(3, 1fr);
+    gap: 0.75rem;
+    margin-top: 0.5rem;
+  }
+
+  .modern-mark-card {
+    padding: 0.5rem;
+  }
+
+  .modern-mark-header {
+    flex-direction: row;
+    align-items: center;
+    gap: 0.5rem;
+  }
+
+  .modern-mark-score {
+    align-self: center;
+  }
+
+  .modern-mark-title {
+    font-size: 0.9rem;
+  }
+
+  .modern-mark-value {
+    font-size: 1.1rem;
+  }
+
+  .modern-mark-max {
+    font-size: 0.8rem;
+  }
+}
+
+@media (max-width: 360px) {
+  .modern-root {
+    padding: 0.375rem;
+  }
+
+  .modern-header,
+  .modern-card {
+    padding: 0.5rem;
+    margin-bottom: 0.5rem;
+  }
+
+  .modern-title {
+    font-size: 1.125rem;
+  }
+
+  .modern-subtitle {
+    font-size: 0.8rem;
+  }
+
+  .modern-marks-grid {
+    grid-template-columns: repeat(3, 1fr);
+    gap: 0.5rem;
+    margin-top: 0.375rem;
+  }
+
+  .modern-mark-card {
+    padding: 0.5rem;
+  }
+
+  .modern-mark-header {
+    gap: 0.375rem;
+  }
+
+  .modern-mark-title {
+    font-size: 0.85rem;
+  }
+
+  .modern-mark-value {
+    font-size: 1rem;
+  }
+
+  .modern-mark-max {
+    font-size: 0.75rem;
+  }
+
+  .modern-card-header {
+    padding-bottom: 0.375rem;
+    margin-bottom: 0.375rem;
+  }
+
+  .modern-card-title {
+    font-size: 0.9rem;
+  }
+
+  .modern-input {
+    height: 2rem;
+    font-size: 0.8rem;
+  }
+
+  .modern-btn {
+    height: 1.875rem;
+    padding: 0 0.375rem;
+    font-size: 0.625rem;
+  }
+
+  .modern-space-y-4>*+* {
+    margin-top: 0.5rem;
+  }
+}

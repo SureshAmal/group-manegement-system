@@ -1,0 +1,557 @@
+/* Modern Admin Page Styles */
+.admin-modern-root {
+  min-height: 100vh;
+  background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+  padding: 24px;
+  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+}
+
+.admin-modern-header {
+  background: rgba(255, 255, 255, 0.95);
+  backdrop-filter: blur(10px);
+  border-radius: 20px;
+  padding: 32px;
+  margin-bottom: 24px;
+  box-shadow: 0 20px 40px rgba(0, 0, 0, 0.1);
+  border: 1px solid rgba(255, 255, 255, 0.2);
+}
+
+.admin-modern-title {
+  font-size: 32px;
+  font-weight: 800;
+  background: linear-gradient(135deg, #667eea, #764ba2);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+  margin: 0 0 8px 0;
+  text-align: center;
+}
+
+.admin-modern-subtitle {
+  color: #64748b;
+  text-align: center;
+  margin: 0;
+  font-size: 16px;
+}
+
+.admin-modern-section {
+  background: rgba(255, 255, 255, 0.95);
+  backdrop-filter: blur(10px);
+  border-radius: 20px;
+  padding: 24px;
+  margin-bottom: 24px;
+  box-shadow: 0 20px 40px rgba(0, 0, 0, 0.1);
+  border: 1px solid rgba(255, 255, 255, 0.2);
+}
+
+.admin-modern-section-header {
+  background: linear-gradient(135deg, #f8fafc, #e2e8f0);
+  border-radius: 12px;
+  padding: 20px;
+  margin: -24px -24px 24px -24px;
+  border-bottom: 1px solid rgba(255, 255, 255, 0.3);
+}
+
+.admin-modern-section-title {
+  font-size: 20px;
+  font-weight: 700;
+  color: #1e293b;
+  margin: 0;
+  display: flex;
+  align-items: center;
+  gap: 8px;
+}
+
+.admin-modern-form-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+  gap: 16px;
+  align-items: end;
+  margin-bottom: 20px;
+}
+
+.admin-form-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+  gap: 16px;
+  align-items: end;
+  margin-bottom: 20px;
+}
+
+.admin-modern-input {
+  padding: 12px 16px;
+  border-radius: 12px;
+  border: 2px solid #e2e8f0;
+  font-size: 16px;
+  background: white;
+  transition: all 0.2s;
+  width: 100%;
+  box-sizing: border-box;
+}
+
+.admin-modern-input:focus {
+  outline: none;
+  border-color: #667eea;
+  box-shadow: 0 0 0 3px rgba(102, 126, 234, 0.1);
+}
+
+.admin-modern-select {
+  padding: 12px 16px;
+  border-radius: 12px;
+  border: 2px solid #e2e8f0;
+  font-size: 16px;
+  background: white;
+  transition: all 0.2s;
+  width: 100%;
+  box-sizing: border-box;
+  cursor: pointer;
+}
+
+.admin-modern-select:focus {
+  outline: none;
+  border-color: #667eea;
+  box-shadow: 0 0 0 3px rgba(102, 126, 234, 0.1);
+}
+
+.admin-modern-btn {
+  padding: 12px 20px;
+  border-radius: 12px;
+  background: linear-gradient(135deg, #667eea, #764ba2);
+  color: white;
+  border: none;
+  font-weight: 600;
+  font-size: 16px;
+  cursor: pointer;
+  transition: all 0.2s;
+  box-shadow: 0 4px 8px rgba(102, 126, 234, 0.3);
+}
+
+.admin-modern-btn:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 6px 12px rgba(102, 126, 234, 0.4);
+}
+
+.admin-modern-btn:active {
+  transform: translateY(0);
+}
+
+.admin-modern-btn.add-user {
+  background: linear-gradient(135deg, #8b5cf6, #7c3aed);
+}
+
+.admin-modern-btn.add-user:hover {
+  box-shadow: 0 6px 12px rgba(139, 92, 246, 0.4);
+}
+
+.admin-modern-btn.add-task {
+  background: linear-gradient(135deg, #10b981, #059669);
+}
+
+.admin-modern-btn.add-task:hover {
+  box-shadow: 0 6px 12px rgba(16, 185, 129, 0.4);
+}
+
+.admin-modern-btn.save-row {
+  background: linear-gradient(135deg, #3b82f6, #2563eb);
+  padding: 8px 16px;
+  font-size: 14px;
+}
+
+.admin-modern-btn.save-row:hover {
+  box-shadow: 0 6px 12px rgba(59, 130, 246, 0.4);
+}
+
+.admin-modern-btn.remove {
+  background: linear-gradient(135deg, #ef4444, #dc2626);
+  padding: 6px 12px;
+  font-size: 12px;
+}
+
+.admin-modern-btn.remove:hover {
+  box-shadow: 0 6px 12px rgba(239, 68, 68, 0.4);
+}
+
+.admin-modern-search {
+  margin-bottom: 24px;
+}
+
+.admin-modern-search input {
+  max-width: 400px;
+  width: 100%;
+  padding: 12px 16px;
+  border-radius: 12px;
+  border: 2px solid #e2e8f0;
+  font-size: 16px;
+  background: white;
+  transition: all 0.2s;
+}
+
+.admin-modern-search input:focus {
+  outline: none;
+  border-color: #667eea;
+  box-shadow: 0 0 0 3px rgba(102, 126, 234, 0.1);
+}
+
+.admin-modern-table-wrap {
+  overflow-x: auto;
+  border-radius: 12px;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+}
+
+.admin-modern-table {
+  width: 100%;
+  border-collapse: collapse;
+  background: white;
+  border-radius: 12px;
+  overflow: hidden;
+  font-size: 16px;
+}
+
+.admin-modern-table th {
+  background: linear-gradient(135deg, #f8fafc, #e2e8f0);
+  padding: 16px 12px;
+  text-align: left;
+  font-weight: 600;
+  color: #475569;
+  border-bottom: 2px solid #e2e8f0;
+  position: sticky;
+  top: 0;
+  z-index: 1;
+}
+
+.admin-modern-table td {
+  padding: 16px 12px;
+  border-bottom: 1px solid #f1f5f9;
+  vertical-align: middle;
+}
+
+.admin-modern-table tr {
+  transition: background 0.2s;
+}
+
+.admin-modern-table tbody tr:hover {
+  background: #f8fafc;
+}
+
+.admin-modern-table tbody tr:last-child td {
+  border-bottom: none;
+}
+
+.admin-modern-email-cell {
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  max-width: 200px;
+  color: #64748b;
+  font-size: 14px;
+}
+
+.admin-modern-mark-input {
+  width: 70px;
+  padding: 8px 12px;
+  border: 2px solid #e2e8f0;
+  border-radius: 8px;
+  text-align: center;
+  font-size: 14px;
+  font-weight: 500;
+  transition: all 0.2s;
+  background: white;
+}
+
+.admin-modern-mark-input:focus {
+  outline: none;
+  border-color: #667eea;
+  box-shadow: 0 0 0 3px rgba(102, 126, 234, 0.1);
+}
+
+.admin-modern-mark-input:hover {
+  border-color: #cbd5e1;
+}
+
+.admin-modern-actions {
+  display: flex;
+  gap: 4px;
+  flex-direction: column;
+}
+
+.admin-modern-task-management {
+  background: linear-gradient(135deg, #f0f9ff, #e0f2fe);
+  border: 1px solid #bae6fd;
+  border-radius: 12px;
+  padding: 20px;
+  margin-bottom: 20px;
+}
+
+.admin-modern-task-title {
+  font-size: 18px;
+  font-weight: 600;
+  margin-bottom: 12px;
+  color: #0369a1;
+  display: flex;
+  align-items: center;
+  gap: 8px;
+}
+
+.admin-modern-task-input {
+  width: 150px;
+  padding: 8px 12px;
+  border: 2px solid #bae6fd;
+  border-radius: 8px;
+  font-size: 14px;
+  background: white;
+  transition: all 0.2s;
+}
+
+.admin-modern-task-input:focus {
+  outline: none;
+  border-color: #0284c7;
+  box-shadow: 0 0 0 3px rgba(2, 132, 199, 0.1);
+}
+
+.admin-modern-task-badges {
+  display: flex;
+  gap: 8px;
+  flex-wrap: wrap;
+  margin-top: 12px;
+}
+
+.admin-modern-task-badge {
+  display: flex;
+  align-items: center;
+  background: linear-gradient(135deg, #e0f2fe, #bae6fd);
+  border: 1px solid #0284c7;
+  border-radius: 6px;
+  padding: 4px 10px;
+  margin-right: 6px;
+}
+
+.admin-modern-task-badge span {
+  font-weight: 600;
+  color: #0369a1;
+}
+
+.admin-modern-task-remove {
+  margin-left: 6px;
+  background: #f87171;
+  color: white;
+  border: none;
+  padding: 2px 6px;
+  font-size: 12px;
+  border-radius: 4px;
+  cursor: pointer;
+  transition: background-color 0.2s;
+}
+
+.admin-modern-task-remove:hover {
+  background: #ef4444;
+}
+
+.loading-spinner {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: 40px;
+  color: #64748b;
+  font-size: 16px;
+}
+
+.loading-spinner::before {
+  content: '';
+  width: 20px;
+  height: 20px;
+  border: 2px solid #e2e8f0;
+  border-top: 2px solid #667eea;
+  border-radius: 50%;
+  animation: spin 1s linear infinite;
+  margin-right: 12px;
+}
+
+@keyframes spin {
+  0% { transform: rotate(0deg); }
+  100% { transform: rotate(360deg); }
+}
+
+@keyframes slideIn {
+  from {
+    transform: translateX(100%);
+    opacity: 0;
+  }
+  to {
+    transform: translateX(0);
+    opacity: 1;
+  }
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+  .admin-modern-root {
+    padding: 16px;
+  }
+  
+  .admin-modern-header,
+  .admin-modern-section {
+    padding: 20px;
+  }
+  
+  .admin-modern-form-grid {
+    grid-template-columns: 1fr;
+  }
+  
+  .admin-modern-table {
+    font-size: 14px;
+    min-width: 600px; /* Ensure table can scroll horizontally */
+  }
+  
+  .admin-modern-table th,
+  .admin-modern-table td {
+    padding: 12px 8px;
+    white-space: nowrap; /* Prevent text wrapping */
+  }
+  
+  .admin-modern-email-cell {
+    white-space: normal;
+    word-break: break-all;
+    max-width: 120px;
+    overflow: hidden;
+    text-overflow: ellipsis;
+  }
+  
+  .admin-modern-mark-input {
+    width: 60px;
+    padding: 6px 8px;
+    font-size: 13px;
+  }
+  
+  .admin-modern-actions {
+    gap: 4px;
+    min-width: 80px;
+  }
+  
+  .admin-modern-btn {
+    padding: 8px 12px;
+    font-size: 13px;
+  }
+  
+  .admin-modern-task-management {
+    padding: 16px;
+  }
+  
+  .admin-modern-task-input {
+    width: 120px;
+    padding: 8px 10px;
+    font-size: 13px;
+  }
+  
+  .admin-modern-task-badges {
+    gap: 6px;
+  }
+  
+  .admin-modern-task-badge {
+    padding: 3px 8px;
+    font-size: 12px;
+  }
+}
+
+@media (max-width: 480px) {
+  .admin-modern-root {
+    padding: 12px;
+  }
+  
+  .admin-modern-header,
+  .admin-modern-section {
+    padding: 16px;
+  }
+  
+  .admin-modern-title {
+    font-size: 24px;
+  }
+  
+  .admin-modern-section-title {
+    font-size: 18px;
+  }
+  
+  .admin-modern-table {
+    font-size: 12px;
+    min-width: 500px; /* Smaller minimum width for very small screens */
+  }
+  
+  .admin-modern-table th,
+  .admin-modern-table td {
+    padding: 8px 6px;
+  }
+  
+  .admin-modern-email-cell {
+    max-width: 100px;
+    font-size: 11px;
+  }
+  
+  .admin-modern-mark-input {
+    width: 50px;
+    padding: 4px 6px;
+    font-size: 12px;
+  }
+  
+  .admin-modern-btn {
+    padding: 6px 10px;
+    font-size: 12px;
+  }
+  
+  .admin-modern-input,
+  .admin-modern-select {
+    padding: 10px 12px;
+    font-size: 14px;
+  }
+  
+  .admin-modern-task-input {
+    width: 100px;
+    padding: 6px 8px;
+    font-size: 12px;
+  }
+  
+  .admin-modern-task-badge {
+    padding: 2px 6px;
+    font-size: 11px;
+  }
+}
+
+/* Enhanced table responsiveness */
+.admin-modern-table-wrap {
+  overflow-x: auto;
+  border-radius: 12px;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+  -webkit-overflow-scrolling: touch; /* Smooth scrolling on iOS */
+}
+
+.admin-modern-table {
+  width: 100%;
+  border-collapse: collapse;
+  background: white;
+  border-radius: 12px;
+  overflow: hidden;
+  font-size: 16px;
+  min-width: 800px; /* Ensure table has minimum width for all content */
+}
+
+/* Stack table on very small screens */
+@media (max-width: 360px) {
+  .admin-modern-table {
+    min-width: 400px;
+    font-size: 11px;
+  }
+  
+  .admin-modern-table th,
+  .admin-modern-table td {
+    padding: 6px 4px;
+  }
+  
+  .admin-modern-mark-input {
+    width: 40px;
+    padding: 3px 4px;
+    font-size: 11px;
+  }
+  
+  .admin-modern-btn {
+    padding: 4px 8px;
+    font-size: 11px;
+  }
+} 

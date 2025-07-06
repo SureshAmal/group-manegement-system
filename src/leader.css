@@ -1,0 +1,428 @@
+/* Leader Page Styles */
+.leader-root {
+  min-height: 100vh;
+  background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+  padding: 24px;
+  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+}
+
+/* Modern Leader Page Styles */
+.leader-modern-root {
+  min-height: 100vh;
+  background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+  padding: 24px;
+  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+}
+
+.leader-modern-header {
+  background: rgba(255, 255, 255, 0.95);
+  backdrop-filter: blur(10px);
+  border-radius: 20px;
+  padding: 32px;
+  margin-bottom: 24px;
+  box-shadow: 0 20px 40px rgba(0, 0, 0, 0.1);
+  border: 1px solid rgba(255, 255, 255, 0.2);
+}
+
+.leader-modern-title {
+  font-size: 32px;
+  font-weight: 800;
+  background: linear-gradient(135deg, #667eea, #764ba2);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+  margin: 0 0 8px 0;
+  text-align: center;
+}
+
+.leader-modern-subtitle {
+  color: #64748b;
+  text-align: center;
+  margin: 0;
+  font-size: 16px;
+}
+
+.leader-modern-section {
+  background: rgba(255, 255, 255, 0.95);
+  backdrop-filter: blur(10px);
+  border-radius: 20px;
+  padding: 24px;
+  margin-bottom: 24px;
+  box-shadow: 0 20px 40px rgba(0, 0, 0, 0.1);
+  border: 1px solid rgba(255, 255, 255, 0.2);
+}
+
+.leader-modern-section-header {
+  background: linear-gradient(135deg, #f8fafc, #e2e8f0);
+  border-radius: 12px;
+  padding: 20px;
+  margin: -24px -24px 24px -24px;
+  border-bottom: 1px solid rgba(255, 255, 255, 0.3);
+}
+
+.leader-modern-section-title {
+  font-size: 20px;
+  font-weight: 700;
+  color: #1e293b;
+  margin: 0;
+  display: flex;
+  align-items: center;
+  gap: 8px;
+}
+
+.leader-modern-user-info {
+  background: linear-gradient(135deg, #f0f9ff, #e0f2fe);
+  border: 1px solid #bae6fd;
+  border-radius: 16px;
+  padding: 24px;
+  margin-top: 20px;
+}
+
+.leader-modern-user-name {
+  font-size: 24px;
+  font-weight: 700;
+  color: #0369a1;
+  margin: 0 0 8px 0;
+}
+
+.leader-modern-user-email {
+  color: #64748b;
+  font-size: 16px;
+  margin: 0 0 8px 0;
+}
+
+.leader-modern-user-group {
+  color: #475569;
+  font-size: 16px;
+  margin: 0;
+}
+
+.leader-modern-user-group strong {
+  color: #1e293b;
+}
+
+.leader-modern-table-wrap {
+  overflow-x: auto;
+  border-radius: 12px;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+  -webkit-overflow-scrolling: touch;
+}
+
+.leader-modern-table {
+  width: 100%;
+  border-collapse: collapse;
+  background: white;
+  border-radius: 12px;
+  overflow: hidden;
+  font-size: 16px;
+  min-width: 800px;
+}
+
+.leader-modern-table th {
+  background: linear-gradient(135deg, #f8fafc, #e2e8f0);
+  padding: 16px 12px;
+  text-align: left;
+  font-weight: 600;
+  color: #475569;
+  border-bottom: 2px solid #e2e8f0;
+  position: sticky;
+  top: 0;
+  z-index: 1;
+}
+
+.leader-modern-table td {
+  padding: 16px 12px;
+  border-bottom: 1px solid #f1f5f9;
+  vertical-align: middle;
+}
+
+.leader-modern-table tr {
+  transition: background 0.2s;
+}
+
+.leader-modern-table tbody tr:hover {
+  background: #f8fafc;
+}
+
+.leader-modern-table tbody tr:last-child td {
+  border-bottom: none;
+}
+
+.leader-modern-email-cell {
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  max-width: 200px;
+  color: #64748b;
+  font-size: 14px;
+}
+
+.leader-modern-mark-input {
+  width: 70px;
+  padding: 8px 12px;
+  border: 2px solid #e2e8f0;
+  border-radius: 8px;
+  text-align: center;
+  font-size: 14px;
+  font-weight: 500;
+  transition: all 0.2s;
+  background: white;
+}
+
+.leader-modern-mark-input:focus {
+  outline: none;
+  border-color: #667eea;
+  box-shadow: 0 0 0 3px rgba(102, 126, 234, 0.1);
+}
+
+.leader-modern-mark-input:hover {
+  border-color: #cbd5e1;
+}
+
+.leader-modern-actions {
+  display: flex;
+  gap: 4px;
+  flex-direction: column;
+}
+
+.leader-modern-btn {
+  padding: 12px 20px;
+  border-radius: 12px;
+  background: linear-gradient(135deg, #667eea, #764ba2);
+  color: white;
+  border: none;
+  font-weight: 600;
+  font-size: 16px;
+  cursor: pointer;
+  transition: all 0.2s;
+  box-shadow: 0 4px 8px rgba(102, 126, 234, 0.3);
+}
+
+.leader-modern-btn:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 6px 12px rgba(102, 126, 234, 0.4);
+}
+
+.leader-modern-btn:active {
+  transform: translateY(0);
+}
+
+.leader-modern-btn.save {
+  background: linear-gradient(135deg, #10b981, #059669);
+  padding: 8px 16px;
+  font-size: 14px;
+}
+
+.leader-modern-btn.save:hover {
+  box-shadow: 0 6px 12px rgba(16, 185, 129, 0.4);
+}
+
+.leader-modern-input,
+.leader-modern-select {
+  padding: 12px 16px;
+  border-radius: 12px;
+  border: 2px solid #e2e8f0;
+  font-size: 16px;
+  background: white;
+  transition: all 0.2s;
+  width: 100%;
+  box-sizing: border-box;
+}
+
+.leader-modern-input:focus,
+.leader-modern-select:focus {
+  outline: none;
+  border-color: #667eea;
+  box-shadow: 0 0 0 3px rgba(102, 126, 234, 0.1);
+}
+
+.task-name {
+  font-weight: 600;
+  color: #1e293b;
+}
+
+.task-mark {
+  text-align: center;
+  font-weight: 600;
+  color: #667eea;
+  font-size: 18px;
+}
+
+.loading-spinner {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: 40px;
+  color: #64748b;
+  font-size: 16px;
+}
+
+.loading-spinner::before {
+  content: '';
+  width: 20px;
+  height: 20px;
+  border: 2px solid #e2e8f0;
+  border-top: 2px solid #667eea;
+  border-radius: 50%;
+  animation: spin 1s linear infinite;
+  margin-right: 12px;
+}
+
+@keyframes spin {
+  0% { transform: rotate(0deg); }
+  100% { transform: rotate(360deg); }
+}
+
+@keyframes slideIn {
+  from {
+    transform: translateX(100%);
+    opacity: 0;
+  }
+  to {
+    transform: translateX(0);
+    opacity: 1;
+  }
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+  .leader-modern-root {
+    padding: 16px;
+  }
+  
+  .leader-modern-header,
+  .leader-modern-section {
+    padding: 20px;
+  }
+  
+  .leader-modern-title {
+    font-size: 24px;
+  }
+  
+  .leader-modern-section-title {
+    font-size: 18px;
+  }
+  
+  .leader-modern-user-name {
+    font-size: 20px;
+  }
+  
+  .leader-modern-table {
+    font-size: 14px;
+    min-width: 600px; /* Ensure table can scroll horizontally */
+  }
+  
+  .leader-modern-table th,
+  .leader-modern-table td {
+    padding: 12px 8px;
+    white-space: nowrap; /* Prevent text wrapping */
+  }
+  
+  .leader-modern-email-cell {
+    max-width: 120px;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    font-size: 12px;
+  }
+  
+  .leader-modern-mark-input {
+    width: 60px;
+    padding: 6px 8px;
+    font-size: 13px;
+  }
+  
+  .leader-modern-actions {
+    gap: 4px;
+    min-width: 80px;
+  }
+  
+  .leader-modern-btn {
+    padding: 8px 12px;
+    font-size: 13px;
+  }
+  
+  .leader-modern-input,
+  .leader-modern-select {
+    padding: 10px 12px;
+    font-size: 14px;
+  }
+}
+
+@media (max-width: 480px) {
+  .leader-modern-root {
+    padding: 12px;
+  }
+  
+  .leader-modern-header,
+  .leader-modern-section {
+    padding: 16px;
+  }
+  
+  .leader-modern-title {
+    font-size: 20px;
+  }
+  
+  .leader-modern-user-info {
+    padding: 16px;
+  }
+  
+  .leader-modern-user-name {
+    font-size: 18px;
+  }
+  
+  .leader-modern-table {
+    font-size: 12px;
+    min-width: 500px; /* Smaller minimum width for very small screens */
+  }
+  
+  .leader-modern-table th,
+  .leader-modern-table td {
+    padding: 8px 6px;
+  }
+  
+  .leader-modern-email-cell {
+    max-width: 100px;
+    font-size: 11px;
+  }
+  
+  .leader-modern-mark-input {
+    width: 50px;
+    padding: 4px 6px;
+    font-size: 12px;
+  }
+  
+  .leader-modern-btn {
+    padding: 6px 10px;
+    font-size: 12px;
+  }
+  
+  .leader-modern-input,
+  .leader-modern-select {
+    padding: 10px 12px;
+    font-size: 14px;
+  }
+}
+
+/* Stack table on very small screens */
+@media (max-width: 360px) {
+  .leader-modern-table {
+    min-width: 400px;
+    font-size: 11px;
+  }
+  
+  .leader-modern-table th,
+  .leader-modern-table td {
+    padding: 6px 4px;
+  }
+  
+  .leader-modern-mark-input {
+    width: 40px;
+    padding: 3px 4px;
+    font-size: 11px;
+  }
+  
+  .leader-modern-btn {
+    padding: 4px 8px;
+    font-size: 11px;
+  }
+} 
